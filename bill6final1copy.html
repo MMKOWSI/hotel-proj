@@ -1,0 +1,159 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>Food Bill Printing Program</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+input[type="number"] {
+  width: 60px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#error {
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+}
+  </style>
+<body>
+  <div class="container">
+    <h2>Food Bill</h2>
+    <form>
+      <table id="bill-table">
+        <tr>
+          <th>Item</th>
+          <th>Price </th>
+          <th>Quantity</th>
+          <th>Total </th>
+        </tr>
+        <tr>
+          <td>BRIYANI</td>
+          <td>100</td>
+          <td><input type="number" name="Quantity[]" class="quantity" value="0" min="0"></td>
+          <td class="item-total">0</td>
+        </tr>
+        <tr>
+          <td>CHICKEN-BURGER</td>
+          <td>150</td>
+          <td><input type="number" name="Quantity[]" class="quantity" value="0" min="0"></td>
+          <td class="item-total">0</td>
+        </tr>
+        <tr>
+          <td>CHICKEN-LOLLIPOP</td>
+          <td>200</td>
+          <td><input type="number" name="Quantity[]" class="quantity" value="0" min="0"></td>
+          <td class="item-total">0</td>
+        </tr>
+        <tr>
+          <td>CHICKEN-PIZZA</td>
+          <td>250</td>
+          <td><input type="number" name="Quantity[]" class="quantity" value="0" min="0"></td>
+          <td class="item-total">0</td>
+        </tr>
+        <tr>
+          <td>VEG-RICE</td>
+          <td>50</td>
+          <td><input type="number" name="Quantity[]" class="quantity" value="0" min="0"></td>
+          <td class="item-total">0</td>
+        </tr> <tr>
+          <td>VEG-BURGER</td>
+          <td>100</td>
+          <td><input type="number" name="Quantity[]" class="quantity" value="0" min="0"></td>
+          <td class="item-total">0</td>
+        </tr> <tr>
+          <td>VEG-ROLL</td>
+          <td>150</td>
+          <td><input type="number" name="Quantity[]" class="quantity" value="0" min="0"></td>
+          <td class="item-total">0</td>
+        </tr>
+        <tr>
+          <td>VEG-PIZZA</td>
+          <td>200</td>
+          <td><input type="number" name="Quantity[]" class="quantity" value="0" min="0"></td>
+          <td class="item-total">0</td>
+        </tr>
+        <!-- Add more rows as needed -->
+        <tr>
+          <td colspan="3">Total</td>
+          <td id="total">0</td>
+        </tr>
+      </table>
+      <button type="button" onclick="calculateTotal()">Calculate Total</button>
+      <button type="submit">Save Bill</button>
+      <button type="button" onclick="printBill()">Print Bill</button>
+      <button ><a href="PAYMENTCOPY.HTML">PAYMENT</a></button>
+    </form>
+  </div>
+
+  <script>
+    function calculateTotal() {
+      var quantities = document.getElementsByClassName("quantity");
+      var itemTotals = document.getElementsByClassName("item-total");
+      var total = 0;
+      for (var i = 0; i < quantities.length; i++) {
+        var quantity = parseFloat(quantities[i].value);
+        var price = parseFloat(quantities[i].parentNode.previousElementSibling.innerText);
+        var itemTotal = quantity * price;
+        itemTotals[i].innerText = itemTotal.toFixed(2);
+        total += itemTotal;
+      }
+      document.getElementById("total").innerText = total.toFixed(2);
+    }
+
+    function printBill() {
+      window.print();
+    }
+  </script>
+</body>
+</html>
+

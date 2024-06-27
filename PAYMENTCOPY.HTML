@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{
+        box-sizing:border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 15px 30px;
+    font-size: 17px;
+    padding: 8px;
+    font-weight: 600;
+    color: black;
+}
+
+.container{
+    background-color:yellow;
+    border: 5px solid black;
+    border-radius: 4px;
+    padding: 5px 10px 15px 20px;
+}
+
+p{
+    font-size: 13px;
+    text-align: right;
+    margin-right: 15px;
+}
+
+
+.main-heading{
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+select,textarea{
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0px;
+    border: 5px solid black;
+    border-radius: 4px;
+}
+
+input[type="submit"]{
+    width: 100%;
+    background-color: blue;
+    color: honeydew;
+    font-size: 18px;
+    padding: 12px 20px;
+    margin: 10px 0px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+btn:hover{
+    background-color: rgb(7, 231, 7);
+}
+
+fieldset{
+    background-color:white;
+    border: 10px solid black ;
+    margin: 15px;
+    font-size: 17px;
+}
+
+.Gender{
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+}
+
+#visa{
+    width: 65px;
+}
+
+input[type="radio"]{
+    margin: 0;
+    padding: 0;
+}
+
+#rupay{
+    width: 95px;
+    height: 56px;
+}
+
+#mastercard{
+    width: 65px;
+}
+.kow{
+    background-color:blue;
+    display: inline-flexbox;
+    text-align: center;
+    border-color:blue;
+    border-width: 5px;
+    border-style: solid;
+    text-color: white;
+}
+.kow:hover{
+    color: lightgreen;
+}
+#g{
+    display:flex;
+
+}
+
+#m{
+    margin: 0;
+    padding: 0;
+    font-size:15px;
+}
+.btn{
+    color: azure;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.btns{
+    color: azure;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 10px;
+    border-radius: 4px;
+    background-color:rgb(0, 0, 255);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.btns:hover{
+    background-color: rgb(7, 231, 7);
+}
+.popup{
+    opacity: .9;
+    transition: all .7s ease-in;
+}
+section{
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0px;
+    border: 5px solid black;
+    border-radius: 4px;
+}
+</style>
+
+<body>
+    <div class="container">
+        <form> 
+            <h1 class="main-heading">PAYMENT FORM</h1>
+            <hr>
+            <p>* indicates a required field</p>
+            <h2>User Information</h2>
+            <div>Name: <input type="text" name="name" placeholder="USERNAME" required></div>
+            <div>
+                Address: <textarea name="address" id="address" cols="70" rows="10"
+                    placeholder="Enter Address"></textarea>
+            </div>
+            <div>
+                Email:  <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+            </div>
+            <div>
+                Pincode: <input type="number" name="pincode" id="pincode" placeholder="123456">
+            </div>
+            <hr>
+            <h2>PaymentInformation</h2>
+            <div>
+                AcceptedCards <br>
+                <div>
+                    <img src="Visa.jpg.png" alt="Visa" class="cards" id="visa">
+                    <img src="Rupay.jpg.png" alt="Rupay" class="cards" id="rupay">
+                    <img src="Mastercard.jpg.png" alt="MasterCard" class="cards" id="mastercard">
+                </div>
+                CardType: 
+                <select name="card_type" id="card_type" required>
+                    <option value="">--Select a Card Type</option> //when user first visits it will not be stored in server
+                    <option value="visa">Visa</option>
+                    <option value="rupay">Rupay</option>
+                    <option value="mastercard">MasterCard</option>
+                </select>
+            </div>
+            <div>
+                CardNumber: <input type="number" name="card_number" id="card_number"
+                    placeholder="5555-6666-7777-8888" required>
+            </div>
+            <div>
+                ExpirationDate: <input type="date" name="exp_date" id="exp_date" required>
+            </div>
+            <div>
+                pin: <input type="password" name="cvv" id="cvv" placeholder="123">
+            </div>
+
+            <div class="btns">
+                <a href="SUCCESSFULL.html" class="btn">SUBMIT</button>
+            </div>
+
+                 
+                  <div class="btns"> 
+                    <a href="payment1.html" class="btn">online pay</a>
+                  </div>  
+              
+            
+    
+        </form> 
+    </body>
+
+</html>
+

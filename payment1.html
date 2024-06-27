@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>PAYMENT PORTAL</title>
+<script type="text/javascript">
+	
+		function validate()
+{
+
+	 var radios = document.getElementsByName("method");
+    
+var Valid = false;
+    var i = 0;
+    while (!Valid && i < radios.length) 
+    {
+        if (radios[i].checked) 
+          Valid = true;
+        i++;        
+    }
+if(Valid)
+{
+	
+	return Valid;
+}
+    if (!Valid) 
+      {
+        alert("Select any option for Payment method!");
+    return Valid;
+  }
+}
+
+</script>
+<script src="jquery-3.3.1.js">
+	</script>
+<style type="text/css">
+	#form
+	{ border:3px solid blue;
+		text-align: center;
+                
+	
+width:auto;
+height:350px;
+font-size: 20px;
+font-family: sans-serif;
+margin-bottom: 20px;
+margin:130px 350px;
+border-radius: 25px;
+background-color:orange; 	;
+z-index: 1;
+box-shadow: 10px 10px 15px #333;
+}
+body
+{
+	margin:0;
+	background-image: url("image/payment.jpg");
+	
+}
+#frame
+{
+height:470px;
+width:90%;
+border:0px solid red;
+margin-bottom: 20px;
+resize: none;
+}
+input[type="radio"]
+{
+	margin-left: 40px;
+}
+button
+{
+	    text-transform: uppercase;
+    font-weight: 700;
+    background-color: BLUE;
+    color: rgba(0,0,0,.8);
+    height: 40px;
+    margin-top:80px;
+    margin-bottom:30px; 
+    font-size: 20px;    
+    border:2px solid black;
+    border-radius: 10px;
+cursor: pointer;
+}
+button:hover
+{
+	
+	box-shadow:5px 5px 5px rgba(0,0,0,.7);
+	z-index: 1;
+}
+.home{
+    color:black;
+    text-decoration: none;
+    top: 0;
+    left:0;
+    position: fixed;
+    margin-left:20px;
+    margin-top:20px;
+    border-color: #333;
+    border-width: 5px;
+    border-style: solid;
+    background-color:white;
+    display: inline;
+}
+ .hover{
+    color:black;
+    background-color: aqua;
+ }
+        .homeimg
+        {
+            height: 80px;
+            width: 80px;
+            float: left;
+            position: fixed;
+            z-index: 1;
+            color: white;
+            
+
+        }
+    U{
+        color:black;
+    }
+    .pay{
+        color:black;
+        margin-top: 30px;
+        margin-right:50px;
+    }
+</style>
+</head>
+
+
+<body >
+    <div class="home">
+        <U style="color: black";>
+        <a href="myfirstcssproject.html">🏠 HOME</a>
+    </U>
+    </div>
+<div id="form">
+	<div>
+<br><br>
+<span style="color:#333;text-transform: capitalize;font-size: 30px;font-family: arial; text-decoration:underline;text-decoration-color: blue;">Select payment method</span>
+<br>
+<br>
+<div class="pay">
+<ul>
+<a href="scanneronlineori3.html"><input type="radio" name="method" value="PAYTM">PAYTM</a>
+<a href="scanneronlineori2.html"><input type="radio" name="method" value="CREDIT CARD" >GPAY</a>
+<a href="scanneronlineori.html"><input type="radio" name="method" value="DEBIT CARD" >FAMPAY</a>
+</ul>
+</div>
+<br>
+<a href="payment.html"><button >BACK</button><a>
+
+</body>
+</html>

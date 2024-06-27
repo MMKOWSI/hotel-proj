@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GOOGLE PAY</title>
+</head> 
+<style>
+body{
+    background-color: skyblue;
+    padding-top: 10px;
+}
+.product{
+    border-color: blue;
+    border-style: solid;
+    border-width:5px;
+    display:inline-block;
+}
+.box{
+        border-color: black;
+        border-width:50px ;
+        border-style:solid ;
+        display: inline-block;
+    }
+  section {
+  height: 100%;
+  width: 100%;
+  color: white;
+
+}
+button {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  padding: 5px 5px;
+  margin-top: 282px;
+  border:orange;
+  border-width: 5px;
+  border-style:solid;
+  background: #4070f4;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover{
+  background-color: green;
+}
+button.show-modal,
+.modal-box {
+position: fixed;
+  left:50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+section.active .show-modal {
+  display: none;
+}
+.overlay {
+position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+section.active .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 24px;
+  background-color:blueviolet;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+section.active .modal-box {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-box i {
+  font-size: 70px;
+  color: #4070f4;
+}
+.modal-box h2 {
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: 500;
+  color:white;
+}
+.modal-box h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin-top: -5px;
+}
+.modal-box .buttons {
+  margin-top: 25px;
+}
+.modal-box button {
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+  font-size: 14px;
+  padding: 6px 12px;
+  margin: 0px 15px;
+}
+.btn{
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top:10px;
+    border-color: #333;
+    border-width: 5px;
+    border-style: solid;
+    background-color: blue;
+}
+.btn:hover{
+  background-color: rgb(7, 231, 7);
+
+}
+</style>
+<body>
+<center>
+<div class="product">
+     <div class="box">
+        <img src="gpay.jpg">
+</div>
+<section>
+    <button class="show-modal">CLICK</button>
+    <span class="overlay"></span>
+    <div class="modal-box">
+      <i class="fa-regular fa-circle-check"></i>
+      <h2>Completed</h2>
+      <h3>your payment successfull</h3>
+    <div class="btns">
+      <a href="myfirstcssproject.html"class="btn">submit</a>
+      <a href="payment1.HTML"class="btn">back</a>
+  </div>
+
+</center>
+  </section>
+<script>
+    const section = document.querySelector("section"),
+      overlay = document.querySelector(".overlay"),
+      showBtn = document.querySelector(".show-modal"),
+      closeBtn = document.querySelector(".close-btn");
+    showBtn.addEventListener("click", () => section.classList.add("active"));
+    overlay.addEventListener("click", () =>
+      section.classList.remove("active")
+    );
+    closeBtn.addEventListener("click", () =>
+      section.classList.remove("active")
+    );
+  </script>
+</body>
+</html>
